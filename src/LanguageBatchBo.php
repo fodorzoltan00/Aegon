@@ -26,9 +26,9 @@ class LanguageBatchBo
 
 		echo "\nGenerating language files\n";
 		foreach (self::$applications as $application => $languages) {
-			echo "[APPLICATION: " . $application . "]\n";
+			echo "[APPLICATION: {$application}]\n";
 			foreach ($languages as $language) {
-				echo "\t[LANGUAGE: " . $language . "]";
+				echo "\t[LANGUAGE: {$language}]";
 				if (self::getLanguageFile($application, $language)) {
 					echo " OK\n";
 				}
