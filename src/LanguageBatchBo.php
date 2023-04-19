@@ -12,7 +12,7 @@ class LanguageBatchBo
 	 *
 	 * @var array
 	 */
-	protected static $applications = array();
+	protected static array $applications = [];
 
 	/**
 	 * Starts the language file generation.
@@ -55,11 +55,11 @@ class LanguageBatchBo
 		$languageResponse = ApiCall::call(
 			'system_api',
 			'language_api',
-			array(
+			[
 				'system' => 'LanguageFiles',
 				'action' => 'getLanguageFile'
-			),
-			array('language' => $language)
+			],
+			['language' => $language]
 		);
 
 		try {
@@ -104,9 +104,9 @@ class LanguageBatchBo
 	public static function generateAppletLanguageXmlFiles()
 	{
 		// List of the applets [directory => applet_id].
-		$applets = array(
+		$applets = [
 			'memberapplet' => 'JSM2_MemberApplet',
-		);
+		];
 
 		echo "\nGetting applet language XMLs..\n";
 
@@ -149,11 +149,11 @@ class LanguageBatchBo
 		$result = ApiCall::call(
 			'system_api',
 			'language_api',
-			array(
+			[
 				'system' => 'LanguageFiles',
 				'action' => 'getAppletLanguages'
-			),
-			array('applet' => $applet)
+			],
+			['applet' => $applet]
 		);
 
 		try {
@@ -180,14 +180,14 @@ class LanguageBatchBo
 		$result = ApiCall::call(
 			'system_api',
 			'language_api',
-			array(
+			[
 				'system' => 'LanguageFiles',
 				'action' => 'getAppletLanguageFile'
-			),
-			array(
+			],
+			[
 				'applet' => $applet,
 				'language' => $language
-			)
+			]
 		);
 
 		try {
