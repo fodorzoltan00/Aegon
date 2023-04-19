@@ -19,7 +19,7 @@ class LanguageBatchBo
 	 *
 	 * @return void
 	 */
-	public static function generateLanguageFiles()
+	public static function generateLanguageFiles(): void
 	{
 		// The applications where we need to translate.
 		self::$applications = Config::get('system.translated_applications');
