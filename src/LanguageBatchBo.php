@@ -51,7 +51,6 @@ class LanguageBatchBo
 	 */
 	protected static function getLanguageFile(string $application, string $language): bool
 	{
-		$result = false;
 		$languageResponse = ApiCall::call(
 			'system_api',
 			'language_api',
@@ -79,7 +78,7 @@ class LanguageBatchBo
 
 		$result = file_put_contents($destination, $languageResponse['data']);
 
-		return (bool)$result;
+		return $result !== false;
 	}
 
 	/**
