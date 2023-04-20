@@ -111,7 +111,7 @@ class LanguageBatchBo
 	{
 		echo "\nGetting applet language XMLs..\n";
 
-		foreach ($applets as $appletDirectory => $appletLanguageId) {
+		foreach (self::$applets as $appletDirectory => $appletLanguageId) {
 			echo " Getting > $appletLanguageId ($appletDirectory) language xmls..\n";
 			$languages = self::getAppletLanguages($appletLanguageId);
 			if (empty($languages)) {
