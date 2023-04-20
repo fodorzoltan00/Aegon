@@ -31,8 +31,7 @@ class LanguageBatchBo
 				echo "\t[LANGUAGE: {$language}]";
 				if (self::getLanguageFile($application, $language)) {
 					echo " OK\n";
-				}
-				else {
+				} else {
 					throw new \Exception('Unable to generate language file!');
 				}
 			}
@@ -63,8 +62,7 @@ class LanguageBatchBo
 
 		try {
 			self::checkForApiErrorResult($languageResponse);
-		}
-		catch (\Exception $e) {
+		} catch (\Exception $e) {
 			throw new \Exception('Error during getting language file: (' . $application . '/' . $language . ')');
 		}
 
@@ -90,7 +88,7 @@ class LanguageBatchBo
 	 */
 	protected static function getLanguageCachePath(string $application): string
 	{
-		return Config::get('system.paths.root') . '/cache/' . $application. '/';
+		return Config::get('system.paths.root') . '/cache/' . $application . '/';
 	}
 
 	/**
@@ -114,8 +112,7 @@ class LanguageBatchBo
 			$languages = self::getAppletLanguages($appletLanguageId);
 			if (empty($languages)) {
 				throw new \Exception('There is no available languages for the ' . $appletLanguageId . ' applet.');
-			}
-			else {
+			} else {
 				echo ' - Available languages: ' . implode(', ', $languages) . "\n";
 			}
 			$path = Config::get('system.paths.root') . '/cache/flash';
@@ -124,8 +121,7 @@ class LanguageBatchBo
 				$xmlFile    = $path . '/lang_' . $language . '.xml';
 				if (strlen($xmlContent) == file_put_contents($xmlFile, $xmlContent)) {
 					echo " OK saving $xmlFile was successful.\n";
-				}
-				else {
+				} else {
 					throw new \Exception('Unable to save applet: (' . $appletLanguageId . ') language: (' . $language
 						. ') xml (' . $xmlFile . ')!');
 				}
@@ -157,8 +153,7 @@ class LanguageBatchBo
 
 		try {
 			self::checkForApiErrorResult($result);
-		}
-		catch (\Exception $e) {
+		} catch (\Exception $e) {
 			throw new \Exception('Getting languages for applet (' . $applet . ') was unsuccessful ' . $e->getMessage());
 		}
 
@@ -191,8 +186,7 @@ class LanguageBatchBo
 
 		try {
 			self::checkForApiErrorResult($result);
-		}
-		catch (\Exception $e) {
+		} catch (\Exception $e) {
 			throw new \Exception('Getting language xml for applet: (' . $applet . ') on language: (' . $language . ') was unsuccessful: '
 				. $e->getMessage());
 		}
