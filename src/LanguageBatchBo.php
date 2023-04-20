@@ -88,7 +88,7 @@ class LanguageBatchBo
 	 *
 	 * @return string   The directory of the cached language files.
 	 */
-	protected static function getLanguageCachePath($application): string
+	protected static function getLanguageCachePath(string $application): string
 	{
 		return Config::get('system.paths.root') . '/cache/' . $application. '/';
 	}
