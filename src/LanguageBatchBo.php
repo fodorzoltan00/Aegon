@@ -98,7 +98,7 @@ class LanguageBatchBo
 	 *
 	 * @return void
 	 */
-	public static function generateAppletLanguageXmlFiles()
+	public static function generateAppletLanguageXmlFiles(): void
 	{
 		// List of the applets [directory => applet_id].
 		$applets = [
