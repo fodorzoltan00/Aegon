@@ -168,7 +168,7 @@ class LanguageBatchBo
 	 *
 	 * @return string|false   The content of the language file or false if weren't able to get it.
 	 */
-	protected static function getAppletLanguageFile($applet, $language): array
+	protected static function getAppletLanguageFile(string $applet, string $language): array
 	{
 		$result = ApiCall::call(
 			'system_api',
