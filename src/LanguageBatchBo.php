@@ -49,7 +49,7 @@ class LanguageBatchBo
 	 *
 	 * @return bool   The success of the operation.
 	 */
-	protected static function getLanguageFile($application, $language)
+	protected static function getLanguageFile($application, $language): bool
 	{
 		$result = false;
 		$languageResponse = ApiCall::call(
