@@ -15,6 +15,15 @@ class LanguageBatchBo
 	protected static array $applications = [];
 
 	/**
+	 * Contains the list of the applets.
+	 *
+	 * @var array
+	 */
+	protected static array $applets = [
+		'memberapplet' => 'JSM2_MemberApplet',
+	];
+
+	/**
 	 * Starts the language file generation.
 	 *
 	 * @return void
@@ -100,11 +109,6 @@ class LanguageBatchBo
 	 */
 	public static function generateAppletLanguageXmlFiles(): void
 	{
-		// List of the applets [directory => applet_id].
-		$applets = [
-			'memberapplet' => 'JSM2_MemberApplet',
-		];
-
 		echo "\nGetting applet language XMLs..\n";
 
 		foreach ($applets as $appletDirectory => $appletLanguageId) {
