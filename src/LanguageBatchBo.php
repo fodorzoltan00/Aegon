@@ -111,19 +111,18 @@ class LanguageBatchBo
 			echo " Getting > $appletLanguageId ($appletDirectory) language xmls..\n";
 			$languages = self::getAppletLanguages($appletLanguageId);
 			if (empty($languages)) {
-				throw new \Exception('There is no available languages for the ' . $appletLanguageId . ' applet.');
+				throw new \Exception("There is no available languages for the $appletLanguageId applet.");
 			} else {
 				echo ' - Available languages: ' . implode(', ', $languages) . "\n";
 			}
 			$path = Config::get('system.paths.root') . '/cache/flash';
 			foreach ($languages as $language) {
 				$xmlContent = self::getAppletLanguageFile($appletLanguageId, $language);
-				$xmlFile    = $path . '/lang_' . $language . '.xml';
+				$xmlFile = "$path/lang_$language.xml";
 				if (strlen($xmlContent) == file_put_contents($xmlFile, $xmlContent)) {
 					echo " OK saving $xmlFile was successful.\n";
 				} else {
-					throw new \Exception('Unable to save applet: (' . $appletLanguageId . ') language: (' . $language
-						. ') xml (' . $xmlFile . ')!');
+					throw new \Exception("Unable to save applet: ($appletLanguageId) language: ($language) xml ($xmlFile)!");
 				}
 			}
 			echo " < $appletLanguageId ($appletDirectory) language xml cached.\n";
