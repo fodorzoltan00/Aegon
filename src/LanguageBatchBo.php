@@ -201,7 +201,7 @@ class LanguageBatchBo
 	 *
 	 * @return void
 	 */
-	protected static function checkForApiErrorResult($result)
+	protected static function checkForApiErrorResult($result): void
 	{
 		// Error during the api call.
 		if ($result === false || !isset($result['status'])) {
