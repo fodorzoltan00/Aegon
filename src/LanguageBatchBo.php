@@ -138,7 +138,7 @@ class LanguageBatchBo
 	 *
 	 * @return array   The list of the available applet languages.
 	 */
-	protected static function getAppletLanguages($applet): array
+	protected static function getAppletLanguages(string $applet): array
 	{
 		$result = ApiCall::call(
 			'system_api',
