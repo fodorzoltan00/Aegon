@@ -153,7 +153,7 @@ class LanguageBatchBo
 		try {
 			self::checkForApiErrorResult($result);
 		} catch (\Exception $e) {
-			throw new \Exception('Getting languages for applet (' . $applet . ') was unsuccessful ' . $e->getMessage());
+			throw new \Exception("Getting languages for applet ($applet) was unsuccessful {$e->getMessage()}");
 		}
 
 		return $result['data'];
@@ -186,8 +186,7 @@ class LanguageBatchBo
 		try {
 			self::checkForApiErrorResult($result);
 		} catch (\Exception $e) {
-			throw new \Exception('Getting language xml for applet: (' . $applet . ') on language: (' . $language . ') was unsuccessful: '
-				. $e->getMessage());
+			throw new \Exception("Getting language xml for applet: ($applet) on language: ($language) was unsuccessful: {$e->getMessage()}");
 		}
 
 		return $result['data'];
